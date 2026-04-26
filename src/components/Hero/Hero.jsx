@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWrapper from "../layout/SectionWrapper";
+import SectionWrapper from "../Layout/SectionWrapper";
 import heroImage from "../../assets/watch-front-view.png";
 import Button from "../Buttons/Button";
 import { motion } from "framer-motion";
