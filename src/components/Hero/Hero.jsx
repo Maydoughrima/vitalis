@@ -28,6 +28,7 @@ export default function Hero() {
     <>
       <SectionWrapper
         ref={sectionRef}
+        id="home"
         className="overflow-hidden !p-0 no-scrollbar"
       >
         <motion.div
@@ -72,7 +73,7 @@ export default function Hero() {
                   delay: 1.9,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="text-smallBody md:text-largeBody tracking-[0.12em] leading-[1.4] text-textSecondary font-body max-w-[300px] mx-auto lg:mx-0"
+                className="text-smallBody md:text-largeBody tracking-[0.12em] leading-[1.4] text-textSecondary font-body max-w-[320px] sm:max-w-md mx-auto lg:mx-0"
               >
                 Precision health monitoring on your wrist
               </motion.p>

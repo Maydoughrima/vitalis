@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
-    @apply no-scrollbar;
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply no-scrollbar bg-bgPrimary;
   }
 }
 

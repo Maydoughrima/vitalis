@@ -5,7 +5,7 @@ import Features from "../components/Features/Features";
 
 export default function LandingPage() {
   return (
-    <div className="overflow-x-hidden no-scrollbar">
+    <div className="overflow-x-hidden no-scrollbar bg-bgPrimary">
       <Navbar />
       <Hero />
       <Features />

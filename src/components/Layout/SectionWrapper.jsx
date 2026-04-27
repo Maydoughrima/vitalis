@@ -1,9 +1,10 @@
 import React, { forwardRef } from "react";
 
-const SectionWrapper = forwardRef(({ children, className = "" }, ref) => {
+const SectionWrapper = forwardRef(({ children, className = "", ...props }, ref) => {
   return (
     <section
       ref={ref}
+      {...props}
       className={`
         w-full
         bg-bgPrimary

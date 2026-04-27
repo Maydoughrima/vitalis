@@ -50,9 +50,11 @@ export default {
         // 🧭 NAV SHADOW
         nav: "0px 8px 24px rgba(0, 0, 0, 0.13)",
 
-        // 💳 FEATURE CARD SHADOW
+        // 💳 FEATURE CARD SHADOWS
         featureCard:
           "0px 6px 25px rgba(43, 130, 246, 0.12), inset 0px 4px 30px rgba(43, 130, 246, 0.10)",
+        featureCardOrange:
+          "0px 6px 25px rgba(245, 158, 11, 0.12), inset 0px 4px 30px rgba(245, 158, 11, 0.10)",
       },
 
       dropShadow: {

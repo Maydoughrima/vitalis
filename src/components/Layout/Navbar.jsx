@@ -7,6 +7,50 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  React.useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-15% 0px -80% 0px", // Focus on the top part of the screen
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const sections = ["home", "features", "health", "about"];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const navLinks = [
+    { name: "Home", id: "home" },
+    { name: "Features", id: "features" },
+    { name: "Health", id: "health" },
+    { name: "About", id: "about" },
+  ];
 
   return (
     <>
@@ -26,66 +70,21 @@ export default function Navbar() {
           </div>
 
           {/* links */}
-          <ul className="gap-4 font-body text-textSecondary hidden md:flex">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `text-largeLabel ${
-                    isActive
+          <ul className="gap-4 font-body text-textSecondary hidden md:flex items-center">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={`text-largeLabel transition-all duration-300 ${
+                    activeSection === link.id
                       ? "text-activeBlue font-semibold"
                       : "hover:text-accentBlue"
-                  }`
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/features"
-                className={({ isActive }) =>
-                  `text-largeLabel ${
-                    isActive
-                      ? "text-activeBlue font-semibold"
-                      : "hover:text-accentBlue"
-                  }`
-                }
-              >
-                Features
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/health"
-                className={({ isActive }) =>
-                  `text-largeLabel ${
-                    isActive
-                      ? "text-activeBlue font-semibold"
-                      : "hover:text-accentBlue"
-                  }`
-                }
-              >
-                Health
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `text-largeLabel ${
-                    isActive
-                      ? "text-activeBlue font-semibold"
-                      : "hover:text-accentBlue"
-                  }`
-                }
-              >
-                About
-              </NavLink>
-            </li>
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
 
           {/* cta */}
@@ -118,58 +117,19 @@ export default function Navbar() {
         <ul
           className={`flex flex-col gap-6 font-display text-textPrimary mt-8 transition-all duration-[800ms] delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
         >
-          <li>
-            <NavLink
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-2xl font-medium block border-b border-[rgba(255,255,255,0.1)] pb-4 transition-colors ${
-                  isActive ? "text-activeBlue" : "hover:text-accentBlue"
-                }`
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/features"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-2xl font-medium block border-b border-[rgba(255,255,255,0.1)] pb-4 transition-colors ${
-                  isActive ? "text-activeBlue" : "hover:text-accentBlue"
-                }`
-              }
-            >
-              Features
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/health"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-2xl font-medium block border-b border-[rgba(255,255,255,0.1)] pb-4 transition-colors ${
-                  isActive ? "text-activeBlue" : "hover:text-accentBlue"
-                }`
-              }
-            >
-              Health
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                `text-2xl font-medium block border-b border-[rgba(255,255,255,0.1)] pb-4 transition-colors ${
-                  isActive ? "text-activeBlue" : "hover:text-accentBlue"
-                }`
-              }
-            >
-              About
-            </NavLink>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl font-medium block border-b border-[rgba(255,255,255,0.1)] pb-4 transition-colors ${
+                  activeSection === link.id ? "text-activeBlue" : "hover:text-accentBlue"
+                }`}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
         <div
           className={`mt-auto mb-12 transition-all duration-[800ms] delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
