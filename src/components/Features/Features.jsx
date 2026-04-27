@@ -37,9 +37,9 @@ export default function Features() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 w-full py-12 md:py-20 items-center">
         {/* 1. Main Text Content (Top on Mobile, Left on Desktop) */}
-        <div className="flex flex-col items-center lg:items-start justify-center lg:text-left h-full order-1">
-          <div className="flex flex-col items-center lg:items-start gap-4">
-            <div className="flex flex-col items-center lg:items-start gap-3">
+        <div className="flex flex-col items-start justify-center lg:text-left h-full order-1">
+          <div className="flex flex-col items-start gap-4">
+            <div className="flex flex-col items-start gap-3">
               <motion.span
                 style={{ opacity: labelOpacity, y: labelY }}
                 className="text-textSecondary uppercase tracking-[0.12em] text-smallLabel md:text-largeLabel font-body font-medium"
@@ -55,7 +55,7 @@ export default function Features() {
             </div>
             <motion.p
               style={{ opacity: descOpacity, y: descY }}
-              className="text-smallBody md:text-largeBody tracking-wide lg:tracking-[0.12em] leading-none lg:leading-[1.5] text-textSecondary font-body max-w-[500px] mx-auto lg:mx-0"
+              className="text-smallBody md:text-largeBody tracking-wide lg:tracking-[0.12em] leading-none lg:leading-[1.5] text-textSecondary font-body max-w-[500px]"
             >
               Advanced sensors and smart systems designed for accuracy, safety,
               and real-world performance.
@@ -95,9 +95,9 @@ export default function Features() {
         {/* 3. Sub-Features Content (Bottom on Mobile, Below Main Text on Desktop) */}
         <motion.div
           style={{ opacity: descOpacity, y: descY }}
-          className="flex flex-col items-center lg:items-start gap-2 md:gap-4 order-3 lg:mt-[-40px]"
+          className="flex flex-col items-start gap-2 md:gap-4 order-3 lg:mt-[-40px]"
         >
-          <div className="flex flex-col items-center lg:items-start gap-1 lg:gap-3">
+          <div className="flex flex-col items-start gap-1 lg:gap-3">
             <span className="text-smallLabel lg:text-largeLabel font-medium tracking-[0.12em] text-textSecondary uppercase">
               Health Monitoring
             </span>
