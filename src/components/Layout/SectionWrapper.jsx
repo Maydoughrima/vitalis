@@ -1,6 +1,9 @@
-export default function SectionWrapper({ children, className = "" }) {
+import React, { forwardRef } from "react";
+
+const SectionWrapper = forwardRef(({ children, className = "" }, ref) => {
   return (
     <section
+      ref={ref}
       className={`
         w-full
         bg-bgPrimary
@@ -9,7 +12,11 @@ export default function SectionWrapper({ children, className = "" }) {
         ${className}
       `}
     >
-      <div className="max-w-[1200px] mx-auto">{children}</div>
+      <div className="max-w-[1600px] mx-auto w-full">{children}</div>
     </section>
   );
-}
+});
+
+SectionWrapper.displayName = "SectionWrapper";
+
+export default SectionWrapper;

@@ -48,7 +48,7 @@ export const COLORS_LIGHT = {
     accentOrange: "#F59E0B",
     accentRed: "#EF4444",
 
-    // 🧱 SURFACES
+    // 🧱 SURFACES 
     card: "#FFFFFF",
     border: "#E2E8F0",
 };
@@ -109,4 +109,26 @@ export const FEATURES = [
         color: "accentRed",
         glow: "red",
     },
+];
+
+
+export const FEATURECARDS = [
+  {
+    id: "heartRate",
+    label: "HEART RATE",
+    value: "78 BPM",
+    trend: "stable",
+    icon: "up",
+    color: "accentBlue",
+    glow: "blue",
+  },
+  {
+    id: "bodyTemp",
+    label: "BODY TEMP",
+    value: "36.5°C",
+    trend: "normal",
+    icon: "up",
+    color: "accentOrange",
+    glow: "orange",
+  },
 ];

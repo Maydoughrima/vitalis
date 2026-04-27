@@ -32,7 +32,8 @@ export default {
       },
 
       boxShadow: {
-        buttonSecondary: "0px 8px 20px rgba(0, 0, 0, 0.25), 0px 0px 20px rgba(43, 130, 246, 0.2)",
+        buttonSecondary:
+          "0px 8px 20px rgba(0, 0, 0, 0.25), 0px 0px 20px rgba(43, 130, 246, 0.2)",
 
         // 🌑 BASE DEPTH SHADOW
         soft: "0px 6px 20px rgba(0, 0, 0, 0.2)",
@@ -48,13 +49,17 @@ export default {
 
         // 🧭 NAV SHADOW
         nav: "0px 8px 24px rgba(0, 0, 0, 0.13)",
+
+        // 💳 FEATURE CARD SHADOW
+        featureCard:
+          "0px 6px 25px rgba(43, 130, 246, 0.12), inset 0px 4px 30px rgba(43, 130, 246, 0.10)",
       },
 
       dropShadow: {
         watch: [
           "0px 20px 40px rgba(0, 0, 0, 0.35)",
           "0px 10px 20px rgba(0, 0, 0, 0.2)",
-        ]
+        ],
       },
 
       blur: {
@@ -66,7 +71,7 @@ export default {
         smallCta: "12px",
         hoverCta: "14px",
 
-        display:"80px",
+        display: "80px",
         display2: "64px",
 
         header: "48px",
@@ -80,7 +85,7 @@ export default {
         largeLabel: "14px",
         smallLabel: "12px",
         caption: "11px",
-      }
+      },
     },
   },
 
