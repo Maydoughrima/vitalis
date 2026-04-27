@@ -31,7 +31,7 @@ export default function Hero() {
         className="overflow-hidden !p-0 no-scrollbar"
       >
         <motion.div
-          style={{ opacity, y }}
+          style={{ opacity, y, willChange: "transform, opacity" }}
           className="pt-32 lg:pt-52 min-h-[100dvh] lg:h-[100dvh] flex flex-col lg:flex-row items-stretch lg:items-center relative w-full px-6 md:px-12 lg:px-20"
         >
           {/* Text Content (Left Side) */}
@@ -51,8 +51,9 @@ export default function Hero() {
                   smart health system
                 </motion.span>
                 <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
+                  style={{ willChange: "transform, opacity" }}
                   transition={{
                     duration: 0.8,
                     delay: 1.7,
@@ -93,31 +94,39 @@ export default function Hero() {
 
           {/* Image Content (Centered on Desktop) */}
           <div className="w-full lg:w-auto relative lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 flex justify-center items-center z-10 order-1 mt-8 lg:mt-0 pointer-events-none">
-            {/* Ambient Glow 1 (Center) */}
+            {/* Ambient Glows (Optimized for Mobile) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.05 }}
-              style={{ opacity: glow1Opacity }}
+              style={{ 
+                opacity: glow1Opacity,
+                willChange: "opacity"
+              }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#4DA3FF] blur-[100px] rounded-full pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#4DA3FF] blur-[60px] md:blur-[100px] rounded-full pointer-events-none"
             ></motion.div>
 
-            {/* Ambient Glow 2 (Bottom Right) */}
+            {/* Hidden on mobile to save GPU */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.04 }}
-              style={{ opacity: glow2Opacity }}
+              style={{ 
+                opacity: glow2Opacity,
+                willChange: "opacity"
+              }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-              className="absolute top-[60%] left-[90%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-[#4DA3FF] blur-[120px] rounded-full pointer-events-none"
+              className="hidden md:block absolute top-[60%] left-[90%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-[#4DA3FF] blur-[120px] rounded-full pointer-events-none"
             ></motion.div>
 
-            {/* Ambient Glow 3 (Bottom Left Focus) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.04 }}
-              style={{ opacity: glow3Opacity }}
+              style={{ 
+                opacity: glow3Opacity,
+                willChange: "opacity"
+              }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-              className="absolute top-[65%] left-[35%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-[#6366F1] blur-[120px] rounded-full pointer-events-none"
+              className="hidden md:block absolute top-[65%] left-[35%] -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[700px] md:h-[700px] bg-[#6366F1] blur-[120px] rounded-full pointer-events-none"
             ></motion.div>
 
             <motion.img
@@ -125,7 +134,11 @@ export default function Hero() {
               alt="Vitalis Watch"
               initial={{ opacity: 0, rotate: -45, scale: 0.9 }}
               animate={{ opacity: 1, rotate: 0, scale: 1 }}
-              style={{ scale: watchScale, opacity: watchOpacity }}
+              style={{ 
+                scale: watchScale, 
+                opacity: watchOpacity,
+                willChange: "transform, opacity"
+              }}
               transition={{
                 duration: 1.2,
                 delay: 0.5,
