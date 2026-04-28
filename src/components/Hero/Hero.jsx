@@ -2,13 +2,19 @@ import React, { useRef } from "react";
 import SectionWrapper from "../Layout/SectionWrapper";
 import heroImage from "../../assets/watch-front-view.png";
 import Button from "../Buttons/Button";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function Hero() {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: rawScroll } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
+  });
+
+  const scrollYProgress = useSpring(rawScroll, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
   });
 
   // Hero Exit Animations (now proportional to section height)
