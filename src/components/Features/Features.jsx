@@ -197,12 +197,21 @@ export default function Features() {
               scale: visual1Scale,
               willChange: "transform, opacity",
             }}
-            className="w-full flex items-center justify-center relative order-2 lg:row-span-2"
+            className="w-full flex items-center justify-center relative order-2 lg:row-span-2 group"
           >
             <motion.div
               style={{ opacity: ui1Opacity, willChange: "opacity" }}
-              className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#2B82F6]/[0.06] blur-[150px] md:blur-[200px] rounded-full pointer-events-none"
-            />
+              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
+            >
+              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                {/* Ultra Soft Bloom */}
+                <div className="absolute inset-[-20%] bg-accentBlue/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                {/* Soft Outer Bloom */}
+                <div className="absolute inset-0 bg-accentBlue/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                {/* Inner Focused Glow */}
+                <div className="absolute inset-[20%] bg-accentBlue/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+              </div>
+            </motion.div>
             <img
               src={WatchLeftView}
               alt="Vitalis Watch Left View"
@@ -309,12 +318,21 @@ export default function Features() {
               scale: visual2Scale,
               willChange: "transform, opacity",
             }}
-            className="w-full flex items-center justify-center relative order-2 lg:order-1 lg:row-span-2"
+            className="w-full flex items-center justify-center relative order-2 lg:order-1 lg:row-span-2 group"
           >
             <motion.div
               style={{ opacity: ui2Opacity, willChange: "opacity" }}
-              className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#F59E0B]/[0.06] blur-[150px] md:blur-[200px] rounded-full pointer-events-none"
-            />
+              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
+            >
+              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                {/* Ultra Soft Bloom */}
+                <div className="absolute inset-[-20%] bg-accentOrange/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                {/* Soft Outer Bloom */}
+                <div className="absolute inset-0 bg-accentOrange/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                {/* Inner Focused Glow */}
+                <div className="absolute inset-[20%] bg-accentOrange/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+              </div>
+            </motion.div>
             <img
               src={WatchRightView}
               alt="Vitalis Watch Right View"
@@ -423,12 +441,21 @@ export default function Features() {
               scale: visual3Scale,
               willChange: "transform, opacity",
             }}
-            className="w-full flex items-center justify-center relative order-2 lg:row-span-2"
+            className="w-full flex items-center justify-center relative order-2 lg:row-span-2 group"
           >
             <motion.div
               style={{ opacity: ui3Opacity, willChange: "opacity" }}
-              className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#EF4444]/[0.06] blur-[150px] md:blur-[200px] rounded-full pointer-events-none"
-            />
+              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
+            >
+              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                {/* Ultra Soft Bloom */}
+                <div className="absolute inset-[-20%] bg-accentRed/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                {/* Soft Outer Bloom */}
+                <div className="absolute inset-0 bg-accentRed/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                {/* Inner Focused Glow */}
+                <div className="absolute inset-[20%] bg-accentRed/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+              </div>
+            </motion.div>
             <img
               src={WatchLeftView}
               alt="Vitalis Watch Safety View"

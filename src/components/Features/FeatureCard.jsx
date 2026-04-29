@@ -9,10 +9,10 @@ import { motion } from "framer-motion";
 
 export default function FeatureCard({ data, className = "" }) {
   const shadows = {
-    blue: "0px 6px 25px rgba(43, 130, 246, 0.12), 0px 10px 40px rgba(43, 130, 246, 0.08), inset 0px 4px 30px rgba(43, 130, 246, 0.10)",
+    blue: "0px 4px 20px rgba(43, 130, 246, 0.08), 0px 8px 30px rgba(43, 130, 246, 0.04), inset 0px 1px 15px rgba(43, 130, 246, 0.05)",
     orange:
-      "0px 6px 25px rgba(245, 158, 11, 0.15), 0px 10px 40px rgba(245, 158, 11, 0.10), inset 0px 4px 30px rgba(245, 158, 11, 0.25)",
-    red: "0px 6px 25px rgba(239, 68, 68, 0.15), 0px 10px 40px rgba(239, 68, 68, 0.10), inset 0px 4px 30px rgba(239, 68, 68, 0.20)",
+      "0px 4px 20px rgba(245, 158, 11, 0.08), 0px 8px 30px rgba(245, 158, 11, 0.04), inset 0px 1px 15px rgba(245, 158, 11, 0.08)",
+    red: "0px 4px 20px rgba(239, 68, 68, 0.08), 0px 8px 30px rgba(239, 68, 68, 0.04), inset 0px 1px 15px rgba(239, 68, 68, 0.08)",
   };
 
   const currentShadow =
