@@ -199,37 +199,40 @@ export default function Features() {
             }}
             className="w-full flex items-center justify-center relative order-2 lg:row-span-2 group"
           >
-            <motion.div
-              style={{ opacity: ui1Opacity, willChange: "opacity" }}
-              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
-            >
-              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
-                {/* Ultra Soft Bloom */}
-                <div className="absolute inset-[-20%] bg-accentBlue/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
-                {/* Soft Outer Bloom */}
-                <div className="absolute inset-0 bg-accentBlue/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
-                {/* Inner Focused Glow */}
-                <div className="absolute inset-[20%] bg-accentBlue/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
-              </div>
-            </motion.div>
-            <img
-              src={WatchLeftView}
-              alt="Vitalis Watch Left View"
-              className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[-8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
-            />
-            {FEATURECARDS.filter((item) => item.id === "heartRate").map(
-              (item) => (
-                <motion.div
-                  key={item.id}
-                  style={{ opacity: ui1Opacity, willChange: "opacity" }}
-                >
-                  <FeatureCard
-                    data={item}
-                    className="absolute bottom-[15%] left-4 lg:-left-8 xl:-left-14 z-20 hidden sm:flex"
-                  />
-                </motion.div>
-              ),
-            )}
+            {/* Inner Relative Wrapper to lock Card to Image */}
+            <div className="relative">
+              <motion.div
+                style={{ opacity: ui1Opacity, willChange: "opacity" }}
+                className="absolute inset-0 pointer-events-none"
+              >
+                <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                  {/* Ultra Soft Bloom */}
+                  <div className="absolute inset-[-20%] bg-accentBlue/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                  {/* Soft Outer Bloom */}
+                  <div className="absolute inset-0 bg-accentBlue/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                  {/* Inner Focused Glow */}
+                  <div className="absolute inset-[20%] bg-accentBlue/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+                </div>
+              </motion.div>
+              
+              <img
+                src={WatchLeftView}
+                alt="Vitalis Watch Left View"
+                className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[-8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
+              />
+
+              {FEATURECARDS.filter((item) => item.id === "heartRate").map(
+                (item) => (
+                  <motion.div
+                    key={item.id}
+                    style={{ opacity: ui1Opacity, willChange: "opacity" }}
+                    className="absolute bottom-[15%] -left-8 md:-left-12 lg:-left-16 xl:-left-20 z-40 hidden lg:flex"
+                  >
+                    <FeatureCard data={item} />
+                  </motion.div>
+                ),
+              )}
+            </div>
           </motion.div>
 
           {/* Sub-Features Content */}
@@ -320,37 +323,40 @@ export default function Features() {
             }}
             className="w-full flex items-center justify-center relative order-2 lg:order-1 lg:row-span-2 group"
           >
-            <motion.div
-              style={{ opacity: ui2Opacity, willChange: "opacity" }}
-              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
-            >
-              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
-                {/* Ultra Soft Bloom */}
-                <div className="absolute inset-[-20%] bg-accentOrange/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
-                {/* Soft Outer Bloom */}
-                <div className="absolute inset-0 bg-accentOrange/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
-                {/* Inner Focused Glow */}
-                <div className="absolute inset-[20%] bg-accentOrange/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
-              </div>
-            </motion.div>
-            <img
-              src={WatchRightView}
-              alt="Vitalis Watch Right View"
-              className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
-            />
-            {FEATURECARDS.filter((item) => item.id === "bodyTemp").map(
-              (item) => (
-                <motion.div
-                  key={item.id}
-                  style={{ opacity: ui2Opacity, willChange: "opacity" }}
-                >
-                  <FeatureCard
-                    data={item}
-                    className="absolute bottom-[15%] right-4 lg:-right-8 xl:-right-14 z-20 hidden sm:flex"
-                  />
-                </motion.div>
-              ),
-            )}
+            {/* Inner Relative Wrapper to lock Card to Image */}
+            <div className="relative">
+              <motion.div
+                style={{ opacity: ui2Opacity, willChange: "opacity" }}
+                className="absolute inset-0 pointer-events-none"
+              >
+                <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                  {/* Ultra Soft Bloom */}
+                  <div className="absolute inset-[-20%] bg-accentOrange/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                  {/* Soft Outer Bloom */}
+                  <div className="absolute inset-0 bg-accentOrange/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                  {/* Inner Focused Glow */}
+                  <div className="absolute inset-[20%] bg-accentOrange/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+                </div>
+              </motion.div>
+
+              <img
+                src={WatchRightView}
+                alt="Vitalis Watch Right View"
+                className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
+              />
+
+              {FEATURECARDS.filter((item) => item.id === "bodyTemp").map(
+                (item) => (
+                  <motion.div
+                    key={item.id}
+                    style={{ opacity: ui2Opacity, willChange: "opacity" }}
+                    className="absolute bottom-[15%] -right-8 md:-right-12 lg:-right-16 xl:-right-20 z-40 hidden lg:flex"
+                  >
+                    <FeatureCard data={item} />
+                  </motion.div>
+                ),
+              )}
+            </div>
           </motion.div>
 
           {/* Sub-Features Content */}
@@ -443,35 +449,38 @@ export default function Features() {
             }}
             className="w-full flex items-center justify-center relative order-2 lg:row-span-2 group"
           >
-            <motion.div
-              style={{ opacity: ui3Opacity, willChange: "opacity" }}
-              className="absolute w-[400px] h-[400px] md:w-[700px] md:h-[700px] pointer-events-none"
-            >
-              <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
-                {/* Ultra Soft Bloom */}
-                <div className="absolute inset-[-20%] bg-accentRed/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
-                {/* Soft Outer Bloom */}
-                <div className="absolute inset-0 bg-accentRed/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
-                {/* Inner Focused Glow */}
-                <div className="absolute inset-[20%] bg-accentRed/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
-              </div>
-            </motion.div>
-            <img
-              src={WatchLeftView}
-              alt="Vitalis Watch Safety View"
-              className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[-8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
-            />
-            {FEATURECARDS.filter((item) => item.id === "safety").map((item) => (
+            {/* Inner Relative Wrapper to lock Card to Image */}
+            <div className="relative">
               <motion.div
-                key={item.id}
                 style={{ opacity: ui3Opacity, willChange: "opacity" }}
+                className="absolute inset-0 pointer-events-none"
               >
-                <FeatureCard
-                  data={item}
-                  className="absolute bottom-[15%] left-4 lg:-left-8 xl:-left-14 z-20 hidden sm:flex"
-                />
+                <div className="w-full h-full transition-opacity duration-700 opacity-10 group-hover:opacity-100">
+                  {/* Ultra Soft Bloom */}
+                  <div className="absolute inset-[-20%] bg-accentRed/[0.02] blur-[200px] md:blur-[300px] rounded-full" />
+                  {/* Soft Outer Bloom */}
+                  <div className="absolute inset-0 bg-accentRed/[0.03] blur-[150px] md:blur-[220px] rounded-full" />
+                  {/* Inner Focused Glow */}
+                  <div className="absolute inset-[20%] bg-accentRed/[0.06] blur-[80px] md:blur-[120px] rounded-full" />
+                </div>
               </motion.div>
-            ))}
+
+              <img
+                src={WatchLeftView}
+                alt="Vitalis Watch Safety View"
+                className="relative z-10 w-full h-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[600px] object-contain rotate-[-8deg] drop-shadow-2xl transition-transform duration-700 hover:scale-105"
+              />
+
+              {FEATURECARDS.filter((item) => item.id === "safety").map((item) => (
+                <motion.div
+                  key={item.id}
+                  style={{ opacity: ui3Opacity, willChange: "opacity" }}
+                  className="absolute bottom-[15%] -left-8 md:-left-12 lg:-left-16 xl:-left-20 z-40 hidden lg:flex"
+                >
+                  <FeatureCard data={item} />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Sub-Features Content */}
